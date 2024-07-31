@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Fetcher</title>
+</head>
+<body>
+    <h1>Fetch Data from API</h1>
+    <form method="post">
+        <label for="url">API URL:</label>
+        <input type="text" id="url" name="url" required>
+        <button type="submit">Fetch</button>
+    </form>
+
+    {% if error %}
+        <h2 style="color: red;">{{ error }}</h2>
+    {% endif %}
+
+    {% if data %}
+        <h2>Data:</h2>
+        <pre>{{ data|tojson(indent=2) }}</pre>
+        <h2>JSON File:</h2>
+        <a href="{{ url_for('static', filename='data.json') }}" download>Download JSON File</a>
+    {% endif %}
+</body>
+</html>
+
