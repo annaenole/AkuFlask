@@ -25,7 +25,7 @@ headers = {
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    if request.method == 'GET', 'POST':
+    if request.method == 'GET':
         start = int(request.form['start'])
         end = int(request.form['end'])
         download_comics(start, end)
