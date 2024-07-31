@@ -23,7 +23,7 @@ headers = {
     'Cookie': 'smf=c484c1375682a2d2c8905113ed2ab8ca; logged_in=1'
 }
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def home():
     if request.method == 'GET':
         start = int(request.form['start'])
